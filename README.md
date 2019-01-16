@@ -14,7 +14,7 @@ Have fun trying it out if you want, some stuff is still kinda broken, but this w
 
 Thanks for taking a look!
 
-Fork authors: Alex Kolstad, Carter Olsen, Shane Clancy
+Fork authors: Alex Kolstad, Carter Olsen, Shane Clancy, Sachin Sakthivel
 
 ## Jar Link
 https://drive.google.com/open?id=0B0yZe9CUL0d_OU1icDhfMWoyUTQ
