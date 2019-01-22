@@ -1,16 +1,10 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
-
 import java.applet.Applet;
 import java.applet.AudioClip;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.awt.image.FilteredImageSource;
-import java.awt.image.ImageFilter;
-import java.awt.image.ImageProducer;
-import java.awt.image.RGBImageFilter;
+import java.awt.image.*;
 import java.io.*;
-import java.net.URL;
 
 public class Window extends JFrame {
 
