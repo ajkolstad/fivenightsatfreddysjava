@@ -41,29 +41,29 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 	JFrame frame = new JFrame();
 	public int StaticTimer = 0;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { //Only creates and runs an instance of main
 		Main main = new Main();
 		Thread thread = new Thread(main);
 		thread.start();
 	}
 
 	@Override
-	public void run() {
+	public void run() { //All game logic, variable initializations, and window control
 		while (true) {
 			try {
 				Thread.sleep(10);
-				if (death == true) {
+				if (death == true) { //This if statement deals with game logic if the player dies
 					Window.needStatic = true;
 					if (deathTimer < 1000) {
 						deathTimer++;
 					}
-					if (deathTimer > 0 && deathTimer < 200) {
+					if (deathTimer > 0 && deathTimer < 200) { //I don't remember this part...
 						Window.needStatic = true;
 					} else {
 						Window.needStatic = false;
 						deather = true;
 					}
-					if (deathTimer == 1000) {
+					if (deathTimer == 1000) { //Resets all variables if game ends with player's death
 						death = false;
 						Window.startGame = false;
 						limit = 200;
@@ -128,7 +128,7 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 						Office.powerRemaining = 100;
 					}
 				}
-				if(Window.startGame == true) {
+				if(Window.startGame == true) { //Main "ticking" tool that counts time in the game. Once player reaches 27000 without dying, they win
 					if(gameTimer < 27000) {
 						gameTimer++;
 					}
@@ -136,7 +136,7 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 						gameWin = true;
 					}
 				}
-				if(gameWin == true) {
+				if(gameWin == true) { //Resets variables if player wins
 					if(gameWinTimer < 700) {
 						gameWinTimer++;
 					}
@@ -205,21 +205,21 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 						Office.powerRemaining = 100;
 					}
 				}
-				if(foxyTime == true) {
-					if(foxyTimeTimer < 50) {
+				if(foxyTime == true) {//Specific to foxy and deals with foxy's advancement and behavior
+					if(foxyTimeTimer < 50) { //Main tick for foxy
 						foxyTimeTimer++;
 					}
-					if(foxyTimeTimer == 50) {
-						if(Office.door1open == true) {
+					if(foxyTimeTimer == 50) { //If foxy's tick reaches 50, then an event is triggered
+						if(Office.door1open == true) { //If the left door is open, then an animation will play and the player will die
 							Foxy.playerdeath = true;
-						} else {
+						} else { //If the left door is closed, the a knocking noise will play, and foxy's timer and location are reset
 							Window.knock.play();
 							Foxy.stage = 1;
 							foxyTime = false;
 						}
 					}
 				}
-				if (Window.needToMove) {
+				if (Window.needToMove) { //Makes the camera "pan" left to right
 					if (Window.cameraPosition == 0 && timer == 2000) {
 						isReversed = false;
 						timer = 0;
@@ -273,7 +273,7 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 				}
 				chickaInitialize.Chicka();
 				foxyInitialize.Foxy();
-				if(Office.monitorUp == true && Window.cameraLocation.equals("West Hall A")) {
+				if(Office.monitorUp == true && Window.cameraLocation.equals("West Hall A")) { //Handle the animation of foxy running down the hall
 				if (FoxyTimer < 4) {
 					FoxyTimer++;
 				}
@@ -400,7 +400,7 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 						FoxyTimer = 0;
 						break;
 					case 31:
-						Office.monitorUp = false;
+						Office.monitorUp = false; //On the last frame, the monitor is forced down, and the foxy even triggers, then the foxy variables are reset
 						Main.foxyTime = true;
 						Window.Fox = 0;
 						FoxyTimer = 0;
@@ -411,7 +411,7 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 				bonnieInitialize.Bonnie();
 				freddyInitialize.Freddy();
 				NoPower();
-				if (StaticTimer < 6) {
+				if (StaticTimer < 6) { //To be honest, I don't remember this part either
 					StaticTimer++;
 				}
 				if (StaticTimer == 6) {
@@ -450,11 +450,11 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 						break;
 					}
 				}
-				if (Window.startClicked == true) {
-					if (newsTimer < 500) {
+				if (Window.startClicked == true) { //Initiates the start of the game is the start button is clicked
+					if (newsTimer < 500) { //Sets time to display the news article at the beginning of the game
 						newsTimer++;
 					}
-					if (newsTimer == 500) {
+					if (newsTimer == 500) {//Sets the variables for the start of the game and resets the news timer
 						newsTimer = 0;
 						Window.startGame = true;
 						Window.startClicked = false;
@@ -462,7 +462,7 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 					}
 
 				}
-				if (Window.startGame == true) {
+				if (Window.startGame == true) {//The tick system for the office's power
 					if (powerTick < 100) {
 						powerTick++;
 					}
@@ -477,7 +477,7 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 		}
 	}
 
-	private void setAnimatronic() {
+	private void setAnimatronic() { //Ticks cycles for all chacters. If I recall correctly, when the tick has reached its maximum, then it is reset and the character moves to the next room
 		if (Window.startGame == true) {
 			if (BonnieTick < 1000) {
 				BonnieTick++;
@@ -514,7 +514,7 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 		}
 	}
 
-	private void NoPower() {
+	private void NoPower() { //Animation for when the office runs out of power
 		if (Office.powerRemaining == 0) {
 			if (powerOutTimer < 4) {
 				powerOutTimer++;
@@ -606,7 +606,7 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 			}
 		}
 	}
-
+	//Initializes all of the characters
 	private void Bonnie() {
 		bonnieInitialize.Bonnie();
 	}
@@ -669,7 +669,7 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 		monitorTransition(e);
 	}
 
-	private void monitorTransition(MouseEvent e) {
+	private void monitorTransition(MouseEvent e) { //Handles the transition from the view inside the office to the view of the map and camera system. 
 		if (Window.startGame == true && Office.monitorUp == false
 				&& monitorTransition == false && Freddy.playerdeath == false && Bonnie.playerdeath == false && Chicka.playerdeath == false && Foxy.playerdeath == false) {
 			if (Window.officeView >= -300 && Window.officeView <= 0

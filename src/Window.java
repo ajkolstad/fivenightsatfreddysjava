@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.image.*;
 import java.io.*;
 
-public class Window extends JFrame {
+public class Window extends JFrame { //A ton of variable declarations
 
 	public static boolean needToMove = true;
 	public static boolean needStatic = false;
@@ -93,13 +93,13 @@ public class Window extends JFrame {
 			ninety, eighty, seventy, sixty, fifty, forty, thirty, twenty, ten,
 			zero, lose, win;
 
-	public Window() {
+	public Window() {//Imports everything and creates the window
 		super("Five Nights at Freddy's");
 		setSize((int) width(Width), (int) height(Height));
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(false);
-		try {
+		try {//Imports sound files
 			knock = Applet.newAudioClip(Window.class.getResource("FoxyKnock.wav"));
 			run = Applet.newAudioClip(Window.class.getResource("FoxyRun.wav"));
 			scream = Applet.newAudioClip(Window.class.getResource("XSCREAM.wav"));
@@ -113,7 +113,7 @@ public class Window extends JFrame {
 		} catch (Exception a) {
 			a.printStackTrace();
 		}
-		try {
+		try {//Imports all images for the game
 			loading = ImageIO.read(Window.class.getResource("jump.jpg"));
 			lose = ImageIO.read(Window.class.getResource("Lose.png"));
 			win = ImageIO.read(Window.class.getResource("StandardWin.png"));
@@ -403,20 +403,20 @@ public class Window extends JFrame {
 
 	}
 
-	public void paint(Graphics g) {
+	public void paint(Graphics g) { //I don't know why this is here as it appears it's not used at all
 		Image = createImage(getWidth(), getHeight());
 		Graphic = Image.getGraphics();
 		paintComponent(Graphic);
 		g.drawImage(Image, 0, 0, this);
 	}
 
-	public void paintComponent(Graphics g) {
+	public void paintComponent(Graphics g) {//Handles everything on the screen. 
 		g.fillRect(0, 0, getWidth(), getHeight());
-		if (ifloading == true) {
+		if (ifloading == true) {//Loading image is displayed while game loads
 			g.drawImage(loading, 370, 200, this);
 		} else {
-			if (startGame == false) {
-				if(mainmenumusicplaying == false) {
+			if (startGame == false) {//Main menu screen is displayed
+				if(mainmenumusicplaying == false) {//Plays the menu music
 					main1.play();
 					ambiance1.play();
 					mainmenumusicplaying = true;
@@ -426,7 +426,7 @@ public class Window extends JFrame {
 				needToMove = false;
 				int random;
 				random = (int) (Math.random() * 20);
-				if (random > 18) {
+				if (random > 18) {//Makes the spooky image that displays on the menu change between different images of Freddy
 					random = (int) (Math.random() * 2);
 					switch (random) {
 					case 1:
@@ -446,7 +446,7 @@ public class Window extends JFrame {
 				if (startClicked == true) {
 					g.drawImage(newspaper, 0, 0, this);
 				}
-			} else {
+			} else {//Main game display
 				main1.stop();
 				ambiance1.stop();
 				mainmenumusicplaying = false;
@@ -455,8 +455,8 @@ public class Window extends JFrame {
 					ambiance1.play();
 					gamemusicplaying = true;
 				}
-				if (Office.monitorUp == true) {
-					if (cameraLocation.equals("Show Stage")) {
+				if (Office.monitorUp == true) {//Displays camera view
+					if (cameraLocation.equals("Show Stage")) {//The format of all of these is the same. Depending on the location viewed, and the characters in the room, a specific image is displayed
 						needToMove = true;
 
 						if (Bonnie.isInRoom() != 0 && Chicka.isInRoom() != 0
@@ -487,7 +487,7 @@ public class Window extends JFrame {
 								makeColorTransparent(showstage, Color.black),
 								800, 290, this);
 					}
-					if (cameraLocation.equals("Dining Area")) {
+					if (cameraLocation.equals("Dining Area")) {//The format of all of these is the same. Depending on the location viewed, and the characters in the room, a specific image is displayed
 						needToMove = true;
 
 						if (Bonnie.isInRoom() != 1 && Chicka.isInRoom() != 1
@@ -536,7 +536,7 @@ public class Window extends JFrame {
 								makeColorTransparent(diningarea, Color.black),
 								800, 290, this);
 					}
-					if (cameraLocation.equals("East Hall A")) {
+					if (cameraLocation.equals("East Hall A")) {//The format of all of these is the same. Depending on the location viewed, and the characters in the room, a specific image is displayed
 						needToMove = true;
 
 						if (Chicka.isInRoom() == 5 && Freddy.isInRoom() != 3
@@ -563,7 +563,7 @@ public class Window extends JFrame {
 								makeColorTransparent(easthall, Color.black),
 								800, 290, this);
 					}
-					if (cameraLocation.equals("East Hall B")) {
+					if (cameraLocation.equals("East Hall B")) {//The format of all of these is the same. Depending on the location viewed, and the characters in the room, a specific image is displayed
 						needToMove = true;
 
 						if (Chicka.isInRoom() != 7 && Freddy.isInRoom() != 4) {
@@ -582,7 +582,7 @@ public class Window extends JFrame {
 								makeColorTransparent(ehallcorner, Color.black),
 								800, 290, this);
 					}
-					if (cameraLocation.equals("Backstage")) {
+					if (cameraLocation.equals("Backstage")) {//The format of all of these is the same. Depending on the location viewed, and the characters in the room, a specific image is displayed
 						needToMove = true;
 
 						if (Bonnie.isInRoom() != 3 && Bonnie.isInRoom() != 4) {
@@ -601,7 +601,7 @@ public class Window extends JFrame {
 								makeColorTransparent(backstage, Color.black),
 								800, 290, this);
 					}
-					if (cameraLocation.equals("Pirate Cove")) {
+					if (cameraLocation.equals("Pirate Cove")) {//The format of all of these is the same. Depending on the location viewed, and the characters in the room, a specific image is displayed
 						needToMove = true;
 
 						if (Foxy.getStage() == 0) {
@@ -617,7 +617,7 @@ public class Window extends JFrame {
 								makeColorTransparent(piratecove, Color.black),
 								800, 290, this);
 					}
-					if (cameraLocation.equals("Restrooms")) {
+					if (cameraLocation.equals("Restrooms")) {//The format of all of these is the same. Depending on the location viewed, and the characters in the room, a specific image is displayed
 						needToMove = true;
 
 						if (Chicka.isInRoom() == 3 && Freddy.isInRoom() != 2
@@ -645,7 +645,7 @@ public class Window extends JFrame {
 								800, 290, this);
 					}
 					if (cameraLocation.equals("West Hall A")
-							&& Foxy.getStage() != 3) {
+							&& Foxy.getStage() != 3) {//The format of all of these is the same. Depending on the location viewed, and the characters in the room, a specific image is displayed
 						needToMove = true;
 
 						if (Bonnie.isInRoom() != 5) {
@@ -660,7 +660,7 @@ public class Window extends JFrame {
 								makeColorTransparent(westhall, Color.black),
 								800, 290, this);
 					}
-					if (cameraLocation.equals("West Hall B")) {
+					if (cameraLocation.equals("West Hall B")) {//The format of all of these is the same. Depending on the location viewed, and the characters in the room, a specific image is displayed
 						needToMove = true;
 
 						if (Bonnie.isInRoom() != 7) {
@@ -675,7 +675,7 @@ public class Window extends JFrame {
 								makeColorTransparent(whallcorner, Color.black),
 								800, 290, this);
 					}
-					if (cameraLocation.equals("Supply Closet")) {
+					if (cameraLocation.equals("Supply Closet")) {//The format of all of these is the same. Depending on the location viewed, and the characters in the room, a specific image is displayed
 						needToMove = true;
 
 						if (Bonnie.isInRoom() != 6) {
@@ -689,9 +689,9 @@ public class Window extends JFrame {
 								800, 290, this);
 					}
 					if (cameraLocation.equals("West Hall A")
-							&& Foxy.getStage() == 3) {
+							&& Foxy.getStage() == 3) {//The format of all of these is the same. Depending on the location viewed, and the characters in the room, a specific image is displayed
 
-						if (Foxy.getStage() == 3) {
+						if (Foxy.getStage() == 3) {//This part is special as this hall can also feature Foxy running down it. This handles that animation
 							needToMove = false;
 							if (Fox == 1) {
 								g.drawImage(foxrun1, 0, 0, this);
@@ -776,6 +776,7 @@ public class Window extends JFrame {
 					g.drawImage(blank, 1034, 631, this);
 					g.drawImage(blank, 796, 431, this);
 					g.drawImage(blank, 1146, 436, this);
+					//I made a little script to make the png's properly transparent
 					g.drawImage(makeColorTransparent(A1, Color.black), 927,
 							347, this);
 					g.drawImage(makeColorTransparent(B1, Color.black), 908,
@@ -796,8 +797,8 @@ public class Window extends JFrame {
 							435, this);
 					g.drawImage(makeColorTransparent(Six, Color.black), 1150,
 							440, this);
-				} else {
-					if (Bonnie.playerdeath == true && Office.monitorUp == false) {
+				} else {//All death animations and inside the office view
+					if (Bonnie.playerdeath == true && Office.monitorUp == false) {//Bonnie's death animation
 						needToMove = false;
 						if (bonnie == 1) {
 							scream.play();
@@ -828,7 +829,7 @@ public class Window extends JFrame {
 
 						
 						
-					} else if (Chicka.playerdeath == true && Office.monitorUp == false) {
+					} else if (Chicka.playerdeath == true && Office.monitorUp == false) {//Chicka's death animation
 						needToMove = false;
 						main1.stop();
 						ambiance1.stop();
@@ -869,7 +870,7 @@ public class Window extends JFrame {
 						scream.stop();
 					}
 
-					} else if (Freddy.playerdeath == true && Office.monitorUp == false) {
+					} else if (Freddy.playerdeath == true && Office.monitorUp == false) {//Freddy's death animation
 						needToMove = false;
 						main1.stop();
 						ambiance1.stop();
@@ -935,7 +936,7 @@ public class Window extends JFrame {
 						}
 
 					} else if (Foxy.playerdeath == true
-							&& Office.door1open == true) {
+							&& Office.door1open == true) {//Foxy's death animation
 						needToMove = false;
 						main1.stop();
 						ambiance1.stop();
@@ -981,7 +982,7 @@ public class Window extends JFrame {
 							g.drawImage(foxy19, 0, 0, this);
 							scream.stop();
 						}
-						
+						//A lot is going on here, but this displays certain images if certain characters are right outside, or if the lights are on or not. It also moves the doors
 					} else if (Office.light1on == true
 							&& Bonnie.isInRoom() == 8) {
 						g.drawImage(officeBonnie, officeView, 0, this);
@@ -1034,7 +1035,7 @@ public class Window extends JFrame {
 						g.drawImage(makeColorTransparent(rightdoor13, Color.white), officeView + 1270, 0, this);
 					}
 				}
-				if (needStatic == true) {
+				if (needStatic == true) {//I don't remember what this is used for
 					if (Static == 1)
 						g.drawImage(static1,
 								0, 0, this);
@@ -1060,7 +1061,7 @@ public class Window extends JFrame {
 						g.drawImage(static8,
 								0, 0, this);
 				}
-				if (Office.getPower() <= 0) {
+				if (Office.getPower() <= 0) {//Death animation if player runs out of power
 					needToMove = false;
 					if (powerOut == 1)
 						g.drawImage(powerout1, 0, 0, this);
@@ -1109,7 +1110,7 @@ public class Window extends JFrame {
 						makeColorTransparent(
 								(makeColorTransparent(cameraBar, Color.black)),
 								Color.GRAY), 262, 660, this);
-				if (Office.getUsage() == 0) {
+				if (Office.getUsage() == 0) {//Displays the amount of power currently being used
 
 				}
 				if (Office.getUsage() == 1) {
@@ -1132,6 +1133,7 @@ public class Window extends JFrame {
 					g.drawImage(makeColorTransparent(use5, Color.black), 90,
 							672, this);
 				}
+				//Displays different static text HUD elements
 				g.drawImage(makeColorTransparent(use, Color.black), 10, 680,
 						this);
 				g.drawImage(makeColorTransparent(powerleft, Color.black), 10,
@@ -1139,7 +1141,7 @@ public class Window extends JFrame {
 				g.drawImage(makeColorTransparent(percentsign, Color.black),
 						215, 650, this);
 
-				if (Office.powerRemaining <= 100 && Office.powerRemaining > 90) {
+				if (Office.powerRemaining <= 100 && Office.powerRemaining > 90) {//Displays the amount of power remaining in percent
 					g.drawImage(makeColorTransparent(onehundred, Color.black),
 							157, 646, this);
 				}
@@ -1183,10 +1185,10 @@ public class Window extends JFrame {
 					g.drawImage(makeColorTransparent(zero, Color.black), 160,
 							646, this);
 				}
-				if (Main.deather == true) {
+				if (Main.deather == true) {//Displays lose image
 					g.drawImage(lose, 0, 0, this);
 				}
-				if (Main.gameWin == true) {
+				if (Main.gameWin == true) {//Displays win image
 					g.drawImage(win, 0, 0, this);
 				}
 			}
@@ -1209,7 +1211,7 @@ public class Window extends JFrame {
 	}
 
 	public static Image makeColorTransparent(java.awt.Image image2,
-			final Color color) {
+			final Color color) {//Makes png's transparent
 		ImageFilter filter = new RGBImageFilter() {
 			public int markerRGB = color.getRGB() | 0xFF000000;
 
