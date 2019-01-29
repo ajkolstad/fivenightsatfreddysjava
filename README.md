@@ -13,6 +13,3 @@ Way back long ago in the world of 2014 in AP Computer Science, we had to make a 
 Have fun trying it out if you want, some stuff is still kinda broken, but this was a lot of fun to make, and it might be cool if you want to see how it works.
 
 Thanks for taking a look!
-
-## Jar Link
-https://drive.google.com/open?id=0B0yZe9CUL0d_OU1icDhfMWoyUTQ
