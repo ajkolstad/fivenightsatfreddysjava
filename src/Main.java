@@ -514,98 +514,25 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 		}
 	}
 
-	private void NoPower() { //Animation for when the office runs out of power
-		if (Office.powerRemaining == 0) {
-			if (powerOutTimer < 4) {
+	private void NoPower() {
+		if (Office.powerRemaining == 0){
+			if (powerOutTimer < 4){
 				powerOutTimer++;
 			}
-			if (powerOutTimer == 4) {
-				switch (Window.powerOut) {
-				case 1:
-					Window.powerOut = 2;
+			else if (powerOutTimer == 4){
+				if (Window.powerOut > 0 && Window.powerOut < 20){
+					Window.powerOut += 1;
 					powerOutTimer = 0;
-					break;
-				case 2:
-					Window.powerOut = 3;
-					powerOutTimer = 0;
-					break;
-				case 3:
-					Window.powerOut = 4;
-					powerOutTimer = 0;
-					break;
-				case 4:
-					Window.powerOut = 5;
-					powerOutTimer = 0;
-					break;
-				case 5:
-					Window.powerOut = 6;
-					powerOutTimer = 0;
-					break;
-				case 6:
-					Window.powerOut = 7;
-					powerOutTimer = 0;
-					break;
-				case 7:
-					Window.powerOut = 8;
-					powerOutTimer = 0;
-					break;
-				case 8:
-					Window.powerOut = 9;
-					powerOutTimer = 0;
-					break;
-				case 9:
-					Window.powerOut = 10;
-					powerOutTimer = 0;
-					break;
-				case 10:
-					Window.powerOut = 11;
-					powerOutTimer = 0;
-					break;
-				case 11:
-					Window.powerOut = 12;
-					powerOutTimer = 0;
-					break;
-				case 12:
-					Window.powerOut = 13;
-					powerOutTimer = 0;
-					break;
-				case 13:
-					Window.powerOut = 14;
-					powerOutTimer = 0;
-					break;
-				case 14:
-					Window.powerOut = 15;
-					powerOutTimer = 0;
-					break;
-				case 15:
-					Window.powerOut = 16;
-					powerOutTimer = 0;
-					break;
-				case 16:
-					Window.powerOut = 17;
-					powerOutTimer = 0;
-					break;
-				case 17:
-					Window.powerOut = 18;
-					powerOutTimer = 0;
-					break;
-				case 18:
-					Window.powerOut = 19;
-					powerOutTimer = 0;
-					break;
-				case 19:
-					Window.powerOut = 20;
-					powerOutTimer = 0;
-					break;
-				case 20:
-					Office.powerRemaining = -1;
-					Window.powerOut = 0;
-					powerOutTimer = 0;
-					break;
 				}
+			}
+			else if (Window.powerOut == 20){
+				Office.powerRemaining = 0;
+				Window.powerOut = 0;
+				powerOutTimer = 0;
 			}
 		}
 	}
+
 	//Initializes all of the characters
 	private void Bonnie() {
 		bonnieInitialize.Bonnie();
