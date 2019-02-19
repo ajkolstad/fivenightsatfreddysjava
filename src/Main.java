@@ -278,135 +278,17 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 					FoxyTimer++;
 				}
 				if (FoxyTimer == 4) {
-					switch (Window.Fox) {
-					case 1:
-						Window.Fox = 2;
-						FoxyTimer = 0;
-						break;
-					case 2:
-						Window.Fox = 3;
-						FoxyTimer = 0;
-						break;
-					case 3:
-						Window.Fox = 4;
-						FoxyTimer = 0;
-						break;
-					case 4:
-						Window.Fox = 5;
-						FoxyTimer = 0;
-						break;
-					case 5:
-						Window.Fox = 6;
-						FoxyTimer = 0;
-						break;
-					case 6:
-						Window.Fox = 7;
-						FoxyTimer = 0;
-						break;
-					case 7:
-						Window.Fox = 8;
-						FoxyTimer = 0;
-						break;
-					case 8:
-						Window.Fox = 9;
-						FoxyTimer = 0;
-						break;
-					case 9:
-						Window.Fox = 10;
-						FoxyTimer = 0;
-						break;
-					case 10:
-						Window.Fox = 11;
-						FoxyTimer = 0;
-						break;
-					case 11:
-						Window.Fox = 12;
-						FoxyTimer = 0;
-						break;
-					case 12:
-						Window.Fox = 13;
-						FoxyTimer = 0;
-						break;
-					case 13:
-						Window.Fox = 14;
-						FoxyTimer = 0;
-						break;
-					case 14:
-						Window.Fox = 15;
-						FoxyTimer = 0;
-						break;
-					case 15:
-						Window.Fox = 16;
-						FoxyTimer = 0;
-						break;
-					case 16:
-						Window.Fox = 17;
-						FoxyTimer = 0;
-						break;
-					case 17:
-						Window.Fox = 18;
-						FoxyTimer = 0;
-						break;
-					case 18:
-						Window.Fox = 19;
-						FoxyTimer = 0;
-						break;
-					case 19:
-						Window.Fox = 20;
-						FoxyTimer = 0;
-						break;
-					case 20:
-						Window.Fox = 21;
-						FoxyTimer = 0;
-						break;
-					case 21:
-						Window.Fox = 22;
-						FoxyTimer = 0;
-						break;
-					case 22:
-						Window.Fox = 23;
-						FoxyTimer = 0;
-						break;
-					case 23:
-						Window.Fox = 24;
-						FoxyTimer = 0;
-						break;
-					case 24:
-						Window.Fox = 25;
-						FoxyTimer = 0;
-						break;
-					case 25:
-						Window.Fox = 26;
-						FoxyTimer = 0;
-						break;
-					case 26:
-						Window.Fox = 27;
-						FoxyTimer = 0;
-						break;
-					case 27:
-						Window.Fox = 28;
-						FoxyTimer = 0;
-						break;
-					case 28:
-						Window.Fox = 29;
-						FoxyTimer = 0;
-						break;
-					case 29:
-						Window.Fox = 30;
-						FoxyTimer = 0;
-						break;
-					case 30:
-						Window.Fox = 31;
-						FoxyTimer = 0;
-						break;
-					case 31:
-						Office.monitorUp = false; //On the last frame, the monitor is forced down, and the foxy even triggers, then the foxy variables are reset
+					if (Window.Fox > 0 && Window.Fox < 31){
+        				Window.Static = Window.Fox + 1;
+						StaticTimer = 0;
+					}
+					else if (Window.Fox == 31){
+						Office.monitorUp = false;
 						Main.foxyTime = true;
 						Window.Fox = 0;
 						FoxyTimer = 0;
 						break;
-					}
-				}
+					}     
 				}
 				bonnieInitialize.Bonnie();
 				freddyInitialize.Freddy();
