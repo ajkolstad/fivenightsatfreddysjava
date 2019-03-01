@@ -106,4 +106,58 @@ public class InitializeGame {
             }
         }
     }
+    
+    public String testCamera(int x, int y) {
+        String ret = "nothing";
+        if (x >= 923 && x <= 973 && y >= 343
+                && y <= 377) {
+            ret =  "Show Stage";
+            
+        }
+        if (x >= 904 && x <= 954 && y >= 399
+                && y <= 433) {
+            ret =  "Dining Area";
+            
+        }
+        if (x >= 877 && x <= 927 && y >= 481
+                && y <= 515) {
+            ret =  "Pirate Cove";
+            
+        }
+        if (x >= 926 && x <= 976 && y >= 596
+                && y <= 630) {
+            ret =  "West Hall A";
+            
+        }
+        if (x >= 926 && x <= 976 && y >= 631
+                && y <= 665) {
+            ret =  "West Hall B";
+            
+        }
+        if (x >= 850 && x <= 900 && y >= 578
+                && y <= 612) {
+            ret =  "Supply Closet";
+            
+        }
+        if (x >= 1034 && x <= 1084 && y >= 596
+                && y <= 630) {
+            ret =  "East Hall A";
+            
+        }
+        if (x >= 1034 && x <= 1084 && y >= 631
+                && y <= 665) {
+            ret =  "East Hall B";
+            
+        }
+        if (x >= 796 && x <= 846 && y >= 431
+                && y <= 465) {
+            ret =  "Backstage";
+            
+        }
+        if (x >= 1146 && x <= 1196 && y >= 436
+                && y <= 470) {
+            ret =  "Restrooms";
+        }
+        return ret;
+    }
 }
