@@ -7,9 +7,73 @@ public class Office {
 	public static double powerRemaining = 100;
 	public static int devicedUsed;
 
+
+	public Office(){
+		light1on = false;
+		light2on = false;
+		door1open = true;
+		door2open = true;
+		monitorUp = false;
+		powerRemaining = 100;
+		devicedUsed = 0;
+	}
+
+	public static void setMonitorUp(Boolean MonitorUp){
+		monitorUp = MonitorUp;
+	}
+
+	public static boolean getMonitorUp(){
+		return monitorUp;
+	}
+
 	static double getPower() {
 		return powerRemaining;
 	}
+
+	public static void setLight1On(boolean light1On){
+		light1on = light1On;
+	}
+
+	public static boolean getLight1On(){
+		return light1on;
+	}
+
+	public static void setLight2On(boolean light2On){
+		light2on = light2On;
+	}
+
+	public static boolean getLight2On(){
+		return light2on;
+	}
+
+	public static void setDoor1Open(boolean door1Open){
+		door1open = door1Open;
+	}
+
+	public static boolean getDoor1Open(){
+		return door1open;
+	}
+
+	public static void setDoor2Open(boolean door2Open){
+		door2open = door2Open;
+	}
+
+	public static boolean getDoor2Open(){
+		return door2open;
+	}
+
+	public static void setPowerRemaining(double PowerRemaining){
+		powerRemaining = PowerRemaining;
+	}
+
+	public static void setDevicedUsed(int DevicedUsed){
+		devicedUsed = DevicedUsed;
+	}
+
+	public static int getDeviceUsed(){
+		return devicedUsed;
+	}
+
 
 	public static int getUsage() {
 		int usage = 0;
