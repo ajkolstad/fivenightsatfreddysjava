@@ -1,19 +1,18 @@
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+import org.junit.Assert;
 
 class OfficeTest {
     Office o = new Office();
 
     @Test
     public void testGetters(){
-        assertFalse(Office.getLight1On());
-        assertFalse(Office.getLight2On());
-        assertFalse(Office.getMonitorUp());
-        assertTrue(Office.getDoor1Open());
-        assertTrue(Office.getDoor2Open());
-        assertEquals(Office.getPower(), 100);
-        assertEquals(Office.getDeviceUsed(), 0);
+        Assert.assertFalse(Office.getLight1On());
+        Assert.assertFalse(Office.getLight2On());
+        Assert.assertFalse(Office.getMonitorUp());
+        Assert.assertTrue(Office.getDoor1Open());
+        Assert.assertTrue(Office.getDoor2Open());
+        Assert.assertEquals(Office.getPower(), 100);
+        Assert.assertEquals(Office.getDeviceUsed(), 0);
     }
 
     @Test
@@ -26,13 +25,13 @@ class OfficeTest {
         Office.setPowerRemaining(25.6);
         Office.setDevicedUsed(2);
 
-        assertTrue(Office.getDoor1Open());
-        assertTrue(Office.getLight1On());
-        assertTrue(Office.getLight2On());
-        assertTrue(Office.getMonitorUp());
-        assertFalse(Office.getDoor2Open());
-        assertEquals(Office.getPower(), 25.6);
-        assertEquals(Office.getDeviceUsed(), 2);
+        Assert.assertTrue(Office.getDoor1Open());
+        Assert.assertTrue(Office.getLight1On());
+        Assert.assertTrue(Office.getLight2On());
+        Assert.assertTrue(Office.getMonitorUp());
+        Assert.assertFalse(Office.getDoor2Open());
+        Assert.assertEquals(Office.getPower(), 25.6);
+        Assert.assertEquals(Office.getDeviceUsed(), 2);
     }
 
     @Test
@@ -43,7 +42,7 @@ class OfficeTest {
         Office.setDoor1Open(true);
         Office.setDoor2Open(true);
         Office.setMonitorUp(false);
-        assertEquals(Office.getUsage(), 2);
+        Assert.assertEquals(Office.getUsage(), 2);
 
         //Lights on, doors closed, monitor up
         Office.setLight1On(true);
@@ -51,7 +50,7 @@ class OfficeTest {
         Office.setDoor1Open(false);
         Office.setDoor2Open(false);
         Office.setMonitorUp(true);
-        assertEquals(Office.getUsage(), 5);
+        Assert.assertEquals(Office.getUsage(), 5);
 
 
         //Lights off, doors open, monitor down
@@ -60,7 +59,7 @@ class OfficeTest {
         Office.setDoor1Open(true);
         Office.setDoor2Open(true);
         Office.setMonitorUp(false);
-        assertEquals(Office.getUsage(), 0);
+        Assert.assertEquals(Office.getUsage(), 0);
     }
 
     @Test
@@ -79,6 +78,6 @@ class OfficeTest {
         Office.descreasepower();
         Office.setDevicedUsed(5);
         Office.descreasepower();
-        assertEquals(Office.getPower(), 81.5);
+        Assert.assertEquals(Office.getPower(), 81.5);
     }
 }
