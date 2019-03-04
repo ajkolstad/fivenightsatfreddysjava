@@ -1,5 +1,6 @@
 import org.junit.Test;
 import org.junit.Assert;
+
 import java.awt.event.MouseEvent;
 
 
@@ -10,9 +11,9 @@ class InitializeGameTest {
     public void testStartGame(){
         InitializeGame it = new InitializeGame();
         it.testStartGame(200, 420);
-        Assert.Assert.assertTrue(Window.startClicked);
+        Assert.assertTrue(Window.startClicked);
         it.testStartGame(500, 1000);
-        Assert.Assert.assertFalse(Window.startClicked);
+        Assert.assertFalse(Window.startClicked);
     }
 
     @Test
@@ -50,17 +51,17 @@ class InitializeGameTest {
     @Test
     public void testCamera(){
         InitializeGame it = new InitializeGame();
-        Assert.assertEquals(it.testCamera(923, 343), "Show Stage");
-        Assert.assertEquals(it.testCamera(904, 399), "Dining Area");
-        Assert.assertEquals(it.testCamera(877, 481), "Pirate Cove");
-        Assert.assertEquals(it.testCamera(926, 596), "West Hall A");
-        Assert.assertEquals(it.testCamera(976, 665), "West Hall B");
-        Assert.assertEquals(it.testCamera(900, 612), "Supply Closet");
-        Assert.assertEquals(it.testCamera(1034, 630), "East Hall A");
-        Assert.assertEquals(it.testCamera(1034, 665), "East Hall B");
-        Assert.assertEquals(it.testCamera(796, 465), "Backstage");
-        Assert.assertEquals(it.testCamera(1146, 470), "Restrooms");
-        Assert.assertEquals(it.testCamera(11923, 11343), "nothing");
+        Assert.assertEquals(it.testCamera2(923, 343), "Show Stage");
+        Assert.assertEquals(it.testCamera2(904, 399), "Dining Area");
+        Assert.assertEquals(it.testCamera2(877, 481), "Pirate Cove");
+        Assert.assertEquals(it.testCamera2(926, 596), "West Hall A");
+        Assert.assertEquals(it.testCamera2(976, 665), "West Hall B");
+        Assert.assertEquals(it.testCamera2(900, 612), "Supply Closet");
+        Assert.assertEquals(it.testCamera2(1034, 630), "East Hall A");
+        Assert.assertEquals(it.testCamera2(1034, 665), "East Hall B");
+        Assert.assertEquals(it.testCamera2(796, 465), "Backstage");
+        Assert.assertEquals(it.testCamera2(1146, 470), "Restrooms");
+        Assert.assertEquals(it.testCamera2(11923, 11343), "nothing");
     }
 
 

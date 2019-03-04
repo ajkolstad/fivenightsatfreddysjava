@@ -183,4 +183,95 @@ public class InitializeGame {
         }
         return ret;
     }
+
+    public void testStartGame(int x, int y){
+        if(x >= 100 && x <= 310 && y >= 400 && y <= 450){
+            Window.startClicked = true;
+        }
+        else{
+            Window.startClicked = false;
+        }
+    }
+
+    public void testLight1(Office o, int x, int y){
+        if(!o.light1on && x >= 30 && x <= 68 && y >= 383 && y <= 437){
+            o.light1on = true;
+        }
+    }
+
+    public void testLight1Off(Office o, int x, int y){
+        if (o.light1on && x >= 30 && x <= 68 && y >= 383 && y <= 437){
+            o.light1on = false;
+        }
+    }
+
+    public void testLight2(Office o, int x, int y){
+        if(!o.light2on && x >= 1212 && x <= 1246 && y >= 383 && y <= 437){
+            o.light2on = true;
+        }
+    }
+
+    public void testLight2Off(Office o, int x, int y){
+        if (o.light2on && x >= 1212 && x <= 1246 && y >= 383 && y <= 437){
+            o.light2on = false;
+        }
+    }
+
+    public void testDoor1(Office o, int x, int y){
+        if(!o.door1open && x >= 30 && x <= 68 && y >= 300 && y <= 357){
+            o.door1open = true;
+        }
+    }
+
+    public void testDoor1Off(Office o, int x, int y){
+        if (o.door1open && x >= 30 && x <= 68 && y >= 300 && y <= 357){
+            o.door1open = false;
+        }
+    }
+
+    public void testDoor2(Office o, int x, int y){
+        if(!o.door2open && x >= 1212 && x <= 1246 && y >= 300 && y <= 357){
+            o.door2open = true;
+        }
+    }
+
+    public void testDoor2Off(Office o, int x, int y){
+        if (o.door2open && x >= 1212 && x <= 1246 && y >= 300 && y <= 357){
+            o.door2open = false;
+        }
+    }
+
+    public String testCamera2(int x, int y){
+        if (x >= 923 && x <= 973 && y >= 343 && y <= 377) {
+            return "Show Stage";
+        }
+        if (x >= 904 && x <= 954 && y >= 399 && y <= 433) {
+            return "Dining Area";
+        }
+        if (x >= 877 && x <= 927 && y >= 481 && y <= 515) {
+            return "Pirate Cove";
+        }
+        if (x >= 926 && x <= 976 && y >= 596 && y <= 630) {
+            return "West Hall A";
+        }
+        if (x >= 926 && x <= 976 && y >= 631 && y <= 665) {
+            return "West Hall B";
+        }
+        if (x >= 850 && x <= 900 && y >= 578 && y <= 612) {
+            return "Supply Closet";
+        }
+        if (x >= 1034 && x <= 1084 && y >= 596 && y <= 630) {
+            return "East Hall A";
+        }
+        if (x >= 1034 && x <= 1084 && y >= 631 && y <= 665) {
+            return "East Hall B";
+        }
+        if (x >= 796 && x <= 846 && y >= 431 && y <= 465) {
+            return "Backstage";
+        }
+        if (x >= 1146 && x <= 1196 && y >= 436 && y <= 470) {
+            return "Restrooms";
+        }
+        return "nothing";
+    }
 }
