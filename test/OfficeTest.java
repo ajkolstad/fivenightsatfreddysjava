@@ -1,7 +1,7 @@
 import org.junit.Test;
 import org.junit.Assert;
 
-class OfficeTest {
+public class OfficeTest {
     Office o = new Office();
 
     @Test
@@ -11,7 +11,7 @@ class OfficeTest {
         Assert.assertFalse(Office.getMonitorUp());
         Assert.assertTrue(Office.getDoor1Open());
         Assert.assertTrue(Office.getDoor2Open());
-        Assert.assertEquals(Office.getPower(), 100);
+        Assert.assertEquals(Office.getPower(), 100, .000001);
         Assert.assertEquals(Office.getDeviceUsed(), 0);
     }
 
@@ -30,7 +30,7 @@ class OfficeTest {
         Assert.assertTrue(Office.getLight2On());
         Assert.assertTrue(Office.getMonitorUp());
         Assert.assertFalse(Office.getDoor2Open());
-        Assert.assertEquals(Office.getPower(), 25.6);
+        Assert.assertEquals(Office.getPower(), 25.6, .000001);
         Assert.assertEquals(Office.getDeviceUsed(), 2);
     }
 
@@ -78,6 +78,6 @@ class OfficeTest {
         Office.descreasepower();
         Office.setDevicedUsed(5);
         Office.descreasepower();
-        Assert.assertEquals(Office.getPower(), 81.5);
+        Assert.assertEquals(Office.getPower(), 81.5, .000001);
     }
 }
