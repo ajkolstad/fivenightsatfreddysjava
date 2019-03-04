@@ -13,4 +13,19 @@ class FoxyTest {
             f.tick();
         }
     }
+
+    @Test
+    public void stageTest(){
+        Foxy sFoxy = new Foxy();
+        assertEquals(sFoxy.getStage(), 0);
+        sFoxy.tick();
+        assertEquals(sFoxy.getStage(), 1);
+        sFoxy.tick();
+        assertEquals(sFoxy.getStage(), 2);
+        sFoxy.tick();
+        assertEquals(sFoxy.getStage(), 3);
+        sFoxy.tick();
+        assertEquals(sFoxy.getStage(), 3);
+    }
+
 }
