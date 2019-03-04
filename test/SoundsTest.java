@@ -31,7 +31,7 @@ public class SoundsTest {
     public void officeSoundTest() {
         Window w = new Window();
         InitializeGame it = new InitializeGame();
-        
+
         Assert.assertEquals("light", it.testSounds(30, 383));
         Assert.assertEquals("light", it.testSounds(1212, 383));
 
