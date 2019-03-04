@@ -1228,4 +1228,32 @@ public class Window extends JFrame { //A ton of variable declarations
 		return Toolkit.getDefaultToolkit().createImage(ip);
 	}
 
+	public String soundsTest() {
+		if (Bonnie.playerdeath == true && Office.monitorUp == false) {//Bonnie's death animation
+			needToMove = false;
+			return "scream";
+
+		} else if (Chicka.playerdeath == true && Office.monitorUp == false) {//Chicka's death animation
+			needToMove = false;
+			main1.stop();
+			ambiance1.stop();
+			return "scream";
+
+		} else if (Freddy.playerdeath == true && Office.monitorUp == false) {//Freddy's death animation
+			needToMove = false;
+			main1.stop();
+			ambiance1.stop();
+			return "scream";
+
+
+		} else if (Foxy.playerdeath == true
+				&& Office.door1open == true) {//Foxy's death animation
+			needToMove = false;
+			main1.stop();
+			ambiance1.stop();
+			return "scream";
+		}
+		return "nothing";
+	}
+
 }

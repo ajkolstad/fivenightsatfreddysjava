@@ -160,4 +160,27 @@ public class InitializeGame {
         }
         return ret;
     }
+    public String testSounds(int x, int y) {
+        String ret = "nothing";
+        if (x >= 30 && x <= 68
+                && y >= 383 && y <= 437
+                ) {
+            ret = "light";
+        }
+        if (x >= 1212 && x <= 1246
+                && y >= 383 && y <= 437
+                ) {
+            ret = "light";
+        }
+        if (x >= 30 && x <= 68
+                && y >= 300 && y <= 357) {
+            ret = "door";
+        }
+        if (x >= 1212 && x <= 1246
+                && y >= 300 && y <= 357
+                ) {
+            ret = "door";
+        }
+        return ret;
+    }
 }

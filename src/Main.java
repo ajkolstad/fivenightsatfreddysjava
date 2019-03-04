@@ -94,7 +94,7 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 						gameTimer = 0;
 						gameWin = false;
 						gameWinTimer = 0;
-						
+
 						Window.needToMove = true;
 						Window.needStatic = false;
 						Window.Static = 1;
@@ -108,18 +108,18 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 						Window.freddie = 1;
 						Window.chicka = 1;
 						Window.powerOut = 1;
-						
+
 						Bonnie.inRoom = 0;
 						Bonnie.playerdeath = false;
-						
+
 						Chicka.inRoom = 0;
 						Chicka.playerdeath = false;
-						
+
 						Freddy.inRoom = 0;
 						Freddy.playerdeath = false;
-						
+
 						Foxy.stage = 0;
-						
+
 						Office.light1on = false;
 						Office.light2on = false;
 						Office.door1open = true;
@@ -128,19 +128,19 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 						Office.powerRemaining = 100;
 					}
 				}
-				if(Window.startGame == true) { //Main "ticking" tool that counts time in the game. Once player reaches 27000 without dying, they win
-					if(gameTimer < 27000) {
+				if (Window.startGame == true) { //Main "ticking" tool that counts time in the game. Once player reaches 27000 without dying, they win
+					if (gameTimer < 27000) {
 						gameTimer++;
 					}
-					if(gameTimer == 27000) {
+					if (gameTimer == 27000) {
 						gameWin = true;
 					}
 				}
-				if(gameWin == true) { //Resets variables if player wins
-					if(gameWinTimer < 700) {
+				if (gameWin == true) { //Resets variables if player wins
+					if (gameWinTimer < 700) {
 						gameWinTimer++;
 					}
-					if(gameWinTimer == 700) {
+					if (gameWinTimer == 700) {
 						gameWin = false;
 						Window.startGame = false;
 						limit = 200;
@@ -171,7 +171,7 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 						gameTimer = 0;
 						gameWin = false;
 						gameWinTimer = 0;
-						
+
 						Window.needToMove = true;
 						Window.needStatic = false;
 						Window.Static = 1;
@@ -185,18 +185,18 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 						Window.freddie = 1;
 						Window.chicka = 1;
 						Window.powerOut = 1;
-						
+
 						Bonnie.inRoom = 0;
 						Bonnie.playerdeath = false;
-						
+
 						Chicka.inRoom = 0;
 						Chicka.playerdeath = false;
-						
+
 						Freddy.inRoom = 0;
 						Freddy.playerdeath = false;
-						
+
 						Foxy.stage = 0;
-						
+
 						Office.light1on = false;
 						Office.light2on = false;
 						Office.door1open = true;
@@ -205,12 +205,12 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 						Office.powerRemaining = 100;
 					}
 				}
-				if(foxyTime == true) {//Specific to foxy and deals with foxy's advancement and behavior
-					if(foxyTimeTimer < 50) { //Main tick for foxy
+				if (foxyTime == true) {//Specific to foxy and deals with foxy's advancement and behavior
+					if (foxyTimeTimer < 50) { //Main tick for foxy
 						foxyTimeTimer++;
 					}
-					if(foxyTimeTimer == 50) { //If foxy's tick reaches 50, then an event is triggered
-						if(Office.door1open == true) { //If the left door is open, then an animation will play and the player will die
+					if (foxyTimeTimer == 50) { //If foxy's tick reaches 50, then an event is triggered
+						if (Office.door1open == true) { //If the left door is open, then an animation will play and the player will die
 							Foxy.playerdeath = true;
 						} else { //If the left door is closed, the a knocking noise will play, and foxy's timer and location are reset
 							Window.knock.play();
@@ -273,87 +273,87 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 				}
 				chickaInitialize.Chicka();
 				foxyInitialize.Foxy();
-				if(Office.monitorUp == true && Window.cameraLocation.equals("West Hall A")) { //Handle the animation of foxy running down the hall
-				if (FoxyTimer < 4) {
-					FoxyTimer++;
-				}
-				if (FoxyTimer == 4) {
-					if (Window.Fox > 0 && Window.Fox < 31){
-        				Window.Static = Window.Fox + 1;
-						StaticTimer = 0;
+				if (Office.monitorUp == true && Window.cameraLocation.equals("West Hall A")) { //Handle the animation of foxy running down the hall
+					if (FoxyTimer < 4) {
+						FoxyTimer++;
 					}
-					else if (Window.Fox == 31){
-						Office.monitorUp = false;
-						Main.foxyTime = true;
-						Window.Fox = 0;
-						FoxyTimer = 0;
-						break;
-					}     
-				}
-				bonnieInitialize.Bonnie();
-				freddyInitialize.Freddy();
-				NoPower();
-				if (StaticTimer < 6) { //To be honest, I don't remember this part either
-					StaticTimer++;
-				}
-				if (StaticTimer == 6) {
-					switch (Window.Static) {
-					case 1:
-						Window.Static = 2;
-						StaticTimer = 0;
-						break;
-					case 2:
-						Window.Static = 3;
-						StaticTimer = 0;
-						break;
-					case 3:
-						Window.Static = 4;
-						StaticTimer = 0;
-						break;
-					case 4:
-						Window.Static = 5;
-						StaticTimer = 0;
-						break;
-					case 5:
-						Window.Static = 6;
-						StaticTimer = 0;
-						break;
-					case 6:
-						Window.Static = 7;
-						StaticTimer = 0;
-						break;
-					case 7:
-						Window.Static = 8;
-						StaticTimer = 0;
-						break;
-					case 8:
-						Window.Static = 1;
-						StaticTimer = 0;
-						break;
+					if (FoxyTimer == 4) {
+						if (Window.Fox > 0 && Window.Fox < 31) {
+							Window.Static = Window.Fox + 1;
+							StaticTimer = 0;
+						} else if (Window.Fox == 31) {
+							Office.monitorUp = false;
+							Main.foxyTime = true;
+							Window.Fox = 0;
+							FoxyTimer = 0;
+							break;
+						}
 					}
-				}
-				if (Window.startClicked == true) { //Initiates the start of the game is the start button is clicked
-					if (newsTimer < 500) { //Sets time to display the news article at the beginning of the game
-						newsTimer++;
+					bonnieInitialize.Bonnie();
+					freddyInitialize.Freddy();
+					NoPower();
+					if (StaticTimer < 6) { //To be honest, I don't remember this part either
+						StaticTimer++;
 					}
-					if (newsTimer == 500) {//Sets the variables for the start of the game and resets the news timer
-						newsTimer = 0;
-						Window.startGame = true;
-						Window.startClicked = false;
-						Window.blip.play();
+					if (StaticTimer == 6) {
+						switch (Window.Static) {
+							case 1:
+								Window.Static = 2;
+								StaticTimer = 0;
+								break;
+							case 2:
+								Window.Static = 3;
+								StaticTimer = 0;
+								break;
+							case 3:
+								Window.Static = 4;
+								StaticTimer = 0;
+								break;
+							case 4:
+								Window.Static = 5;
+								StaticTimer = 0;
+								break;
+							case 5:
+								Window.Static = 6;
+								StaticTimer = 0;
+								break;
+							case 6:
+								Window.Static = 7;
+								StaticTimer = 0;
+								break;
+							case 7:
+								Window.Static = 8;
+								StaticTimer = 0;
+								break;
+							case 8:
+								Window.Static = 1;
+								StaticTimer = 0;
+								break;
+						}
 					}
+					if (Window.startClicked == true) { //Initiates the start of the game is the start button is clicked
+						if (newsTimer < 500) { //Sets time to display the news article at the beginning of the game
+							newsTimer++;
+						}
+						if (newsTimer == 500) {//Sets the variables for the start of the game and resets the news timer
+							newsTimer = 0;
+							Window.startGame = true;
+							Window.startClicked = false;
+							Window.blip.play();
+						}
 
-				}
-				if (Window.startGame == true) {//The tick system for the office's power
-					if (powerTick < 100) {
-						powerTick++;
 					}
-					if (powerTick == 100) {
-						Office.descreasepower();
-						powerTick = 0;
+					if (Window.startGame == true) {//The tick system for the office's power
+						if (powerTick < 100) {
+							powerTick++;
+						}
+						if (powerTick == 100) {
+							Office.descreasepower();
+							powerTick = 0;
+						}
 					}
 				}
-			} catch (Exception a) {
+			}catch (Exception a) {
 				a.printStackTrace();
 			}
 		}
