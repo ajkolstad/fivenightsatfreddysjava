@@ -4,7 +4,7 @@ import org.junit.Assert;
 import java.awt.event.MouseEvent;
 
 
-class InitializeGameTest {
+public class InitializeGameTest {
 
     //Testing mouse even for starting the game
     @Test
