@@ -11,6 +11,18 @@ public class Freddy {
 		return inRoom;
 	}
 
+	public static void setRoom(int room) {
+		inRoom = room;
+	}
+
+	public static boolean getPlayerDeath() {
+		return playerdeath;
+	}
+
+	public static void setPlayerDeath(boolean state) {
+		playerdeath = state;
+	}
+
 	public static void tick() {
 
 		if (inRoom == 0 && (Bonnie.inRoom == 0 || Chicka.inRoom == 0)) {
