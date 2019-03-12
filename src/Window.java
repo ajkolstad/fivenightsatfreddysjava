@@ -91,7 +91,7 @@ public class Window extends JFrame { //A ton of variable declarations
 			rightdoor5, rightdoor6, rightdoor7, rightdoor8, rightdoor9,
 			rightdoor10, rightdoor11, rightdoor12, rightdoor13, onehundred,
 			ninety, eighty, seventy, sixty, fifty, forty, thirty, twenty, ten,
-			zero, lose, win;
+			zero, lose, win, offline;
 
 	public Window() {//Imports everything and creates the window
 		super("Five Nights at Freddy's");
@@ -114,6 +114,7 @@ public class Window extends JFrame { //A ton of variable declarations
 			a.printStackTrace();
 		}
 		try {//Imports all images for the game
+			offline = ImageIO.read(Window.class.getResource("offline.jpg"));
 			loading = ImageIO.read(Window.class.getResource("jump.jpg"));
 			lose = ImageIO.read(Window.class.getResource("Lose.png"));
 			win = ImageIO.read(Window.class.getResource("StandardWin.png"));
@@ -497,40 +498,43 @@ public class Window extends JFrame { //A ton of variable declarations
 							g.drawImage(diningNone, cameraPosition - 200, 0,
 									this);
 						}
-						if (Bonnie.isInRoom() == 1 && Chicka.isInRoom() != 1
+						else if (Bonnie.isInRoom() == 1 && Chicka.isInRoom() != 1
 								&& Freddy.isInRoom() != 1
 								&& Bonnie.isInRoom() != 2
 								&& Chicka.isInRoom() != 2) {
 							g.drawImage(diningBonnieFar, cameraPosition - 200,
 									0, this);
 						}
-						if (Bonnie.isInRoom() != 1 && Chicka.isInRoom() != 1
+						else if (Bonnie.isInRoom() != 1 && Chicka.isInRoom() != 1
 								&& Freddy.isInRoom() != 1
 								&& Bonnie.isInRoom() != 1
 								&& Chicka.isInRoom() == 2) {
 							g.drawImage(diningChickaClose,
 									cameraPosition - 200, 0, this);
 						}
-						if (Bonnie.isInRoom() != 1 && Chicka.isInRoom() == 1
+						else if (Bonnie.isInRoom() != 1 && Chicka.isInRoom() == 1
 								&& Freddy.isInRoom() != 1
 								&& Bonnie.isInRoom() != 2
 								&& Chicka.isInRoom() != 2) {
 							g.drawImage(diningChickaFar, cameraPosition - 200,
 									0, this);
 						}
-						if (Bonnie.isInRoom() != 1 && Chicka.isInRoom() != 1
+						else if (Bonnie.isInRoom() != 1 && Chicka.isInRoom() != 1
 								&& Freddy.isInRoom() != 1
 								&& Bonnie.isInRoom() == 2
 								&& Chicka.isInRoom() != 2) {
 							g.drawImage(diningChickaClose,
 									cameraPosition - 200, 0, this);
 						}
-						if (Bonnie.isInRoom() != 1 && Chicka.isInRoom() != 1
+						else if (Bonnie.isInRoom() != 1 && Chicka.isInRoom() != 1
 								&& Freddy.isInRoom() == 1
 								&& Bonnie.isInRoom() != 2
 								&& Chicka.isInRoom() != 2) {
 							g.drawImage(diningFreddy, cameraPosition - 200, 0,
 									this);
+						}
+						else {
+							g.drawImage(offline, cameraPosition - 200, 0, this);
 						}
 						g.drawImage(
 								makeColorTransparent(diningarea, Color.black),
@@ -544,20 +548,23 @@ public class Window extends JFrame { //A ton of variable declarations
 							g.drawImage(eastHallAChickaFar,
 									cameraPosition - 200, 0, this);
 						}
-						if (Chicka.isInRoom() != 5 && Freddy.isInRoom() != 3
+						else if (Chicka.isInRoom() != 5 && Freddy.isInRoom() != 3
 								&& Chicka.isInRoom() == 6) {
 							g.drawImage(eastHallAChickaClose,
 									cameraPosition - 200, 0, this);
 						}
-						if (Chicka.isInRoom() != 5 && Freddy.isInRoom() == 3
+						else if (Chicka.isInRoom() != 5 && Freddy.isInRoom() == 3
 								&& Chicka.isInRoom() != 6) {
 							g.drawImage(eastHallAFreddy, cameraPosition - 200,
 									0, this);
 						}
-						if (Chicka.isInRoom() != 5 && Freddy.isInRoom() != 3
+						else if (Chicka.isInRoom() != 5 && Freddy.isInRoom() != 3
 								&& Chicka.isInRoom() != 6) {
 							g.drawImage(eastHallANone, cameraPosition - 200, 0,
 									this);
+						}
+						else {
+							g.drawImage(offline, cameraPosition - 200, 0, this);
 						}
 						g.drawImage(
 								makeColorTransparent(easthall, Color.black),
@@ -570,13 +577,16 @@ public class Window extends JFrame { //A ton of variable declarations
 							g.drawImage(eastHallBNone, cameraPosition - 200, 0,
 									this);
 						}
-						if (Chicka.isInRoom() == 7 && Freddy.isInRoom() != 4) {
+						else if (Chicka.isInRoom() == 7 && Freddy.isInRoom() != 4) {
 							g.drawImage(eastHallBChicka, cameraPosition - 200,
 									0, this);
 						}
-						if (Chicka.isInRoom() != 7 && Freddy.isInRoom() == 4) {
+						else if (Chicka.isInRoom() != 7 && Freddy.isInRoom() == 4) {
 							g.drawImage(eastHallBFreddy, cameraPosition - 200,
 									0, this);
+						}
+						else {
+							g.drawImage(offline, cameraPosition - 200, 0, this);
 						}
 						g.drawImage(
 								makeColorTransparent(ehallcorner, Color.black),
@@ -589,13 +599,16 @@ public class Window extends JFrame { //A ton of variable declarations
 							g.drawImage(backstageNone, cameraPosition - 200, 0,
 									this);
 						}
-						if (Bonnie.isInRoom() == 3 && Bonnie.isInRoom() != 4) {
+						else if (Bonnie.isInRoom() == 3 && Bonnie.isInRoom() != 4) {
 							g.drawImage(backstageFar, cameraPosition - 200, 0,
 									this);
 						}
-						if (Bonnie.isInRoom() != 3 && Bonnie.isInRoom() == 4) {
+						else if (Bonnie.isInRoom() != 3 && Bonnie.isInRoom() == 4) {
 							g.drawImage(backstageClose, cameraPosition - 200,
 									0, this);
+						}
+						else {
+							g.drawImage(offline, cameraPosition - 200, 0, this);
 						}
 						g.drawImage(
 								makeColorTransparent(backstage, Color.black),
@@ -625,20 +638,23 @@ public class Window extends JFrame { //A ton of variable declarations
 							g.drawImage(restroomsChickaFar,
 									cameraPosition - 200, 0, this);
 						}
-						if (Chicka.isInRoom() != 3 && Freddy.isInRoom() != 2
+						else if (Chicka.isInRoom() != 3 && Freddy.isInRoom() != 2
 								&& Chicka.isInRoom() == 4) {
 							g.drawImage(restroomsChickaClose,
 									cameraPosition - 200, 0, this);
 						}
-						if (Chicka.isInRoom() != 3 && Freddy.isInRoom() == 2
+						else if (Chicka.isInRoom() != 3 && Freddy.isInRoom() == 2
 								&& Chicka.isInRoom() != 4) {
 							g.drawImage(restroomsFreddy, cameraPosition - 200,
 									0, this);
 						}
-						if (Chicka.isInRoom() != 3 && Freddy.isInRoom() != 2
+						else if (Chicka.isInRoom() != 3 && Freddy.isInRoom() != 2
 								&& Chicka.isInRoom() != 4) {
 							g.drawImage(restroomsNone, cameraPosition - 200, 0,
 									this);
+						}
+						else {
+							g.drawImage(offline, cameraPosition - 200, 0, this);
 						}
 						g.drawImage(
 								makeColorTransparent(restrooms, Color.black),
@@ -652,7 +668,7 @@ public class Window extends JFrame { //A ton of variable declarations
 							g.drawImage(westHallANone, cameraPosition - 200, 0,
 									this);
 						}
-						if (Bonnie.isInRoom() == 5) {
+						else {
 							g.drawImage(westHallABonnie, cameraPosition - 200,
 									0, this);
 						}
@@ -667,7 +683,7 @@ public class Window extends JFrame { //A ton of variable declarations
 							g.drawImage(westHallBNone, cameraPosition - 200, 0,
 									this);
 						}
-						if (Bonnie.isInRoom() == 7) {
+						else {
 							g.drawImage(westHallBBonnie, cameraPosition - 200,
 									0, this);
 						}
@@ -681,7 +697,7 @@ public class Window extends JFrame { //A ton of variable declarations
 						if (Bonnie.isInRoom() != 6) {
 							g.drawImage(supplyclosetNone, -100, 0, this);
 						}
-						if (Bonnie.isInRoom() == 6) {
+						else {
 							g.drawImage(supplyclosetBonnie, -100, 0, this);
 						}
 						g.drawImage(
