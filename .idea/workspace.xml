@@ -3,10 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="918c93a4-f721-4047-88e9-abfacbf6da68" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/SoundsTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/WindowTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/InitializeGameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/InitializeGameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/OfficeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/OfficeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/BonnieInitializeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/BonnieTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ChickaInitializeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/ChickaTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/FoxyInitializeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/FoxyInitializeTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/FoxyTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/FoxyTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/FreddyInitializeTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/FreddyTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/MainTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/FoxyInitializeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/FoxyInitializeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/FoxyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/FoxyTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,22 +58,23 @@
     <session id="1733120576">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="2" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="9" />
+          <entry key="java" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="9" />
+          <entry key="JAVA" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -114,64 +122,15 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/InitializeGame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/OfficeTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="80" column="60" selection-start-line="80" selection-start-column="60" selection-end-line="80" selection-end-column="60" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/Bonnie.java">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/InitializeGameTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-231">
-              <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/FoxyInitializeTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/WindowTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/SoundsTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="41" lean-forward="true" selection-end-line="44" />
+            <state relative-caret-position="57">
+              <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -182,37 +141,80 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/FoxyTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            <state relative-caret-position="38">
+              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Bonnie.java">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/test/FoxyInitializeTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/OfficeTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
+        <entry file="file://$PROJECT_DIR$/test/WindowTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7718">
-              <caret line="468" selection-start-line="468" selection-end-line="468" />
+            <state relative-caret-position="38">
+              <caret line="2" column="18" selection-start-column="7" selection-end-line="2" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#11311#11312#0" expanded="true" />
-                <element signature="e#11343#11344#0" expanded="true" />
-                <element signature="e#11369#11370#0" expanded="true" />
-                <element signature="e#11401#11402#0" expanded="true" />
-                <element signature="e#11425#11426#0" expanded="true" />
-                <element signature="e#11453#11454#0" expanded="true" />
-                <element signature="e#11479#11480#0" expanded="true" />
-                <element signature="e#11511#11512#0" expanded="true" />
-                <element signature="e#11691#11692#0" expanded="true" />
-                <element signature="e#11728#11729#0" expanded="true" />
-                <element signature="e#12221#12222#0" expanded="true" />
-                <element signature="e#12248#12249#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/InitializeGame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3230">
+              <caret line="170" column="39" selection-start-line="170" selection-start-column="39" selection-end-line="170" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/SoundsTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/FoxyInitialize.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Foxy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="25" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -286,17 +288,15 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="x" value="951" />
+    <option name="width" value="975" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -318,6 +318,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -326,7 +328,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551734655492" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551735036850" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -361,26 +363,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.Unnamed">
-    <configuration name="SoundsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Five Nights at Freddy's" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SoundsTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SoundsTest.officeSoundTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Five Nights at Freddy's" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SoundsTest" />
-      <option name="METHOD_NAME" value="officeSoundTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Unnamed" type="JUnit" factoryName="JUnit">
+  <component name="RunManager">
+    <configuration name="testAll" type="JUnit" factoryName="JUnit">
       <module name="Five Nights at Freddy's" />
       <option name="MAIN_CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -391,27 +375,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WindowTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Five Nights at Freddy's" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="WindowTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="JUnit.Unnamed" />
-      <item itemvalue="JUnit.WindowTest" />
-      <item itemvalue="JUnit.SoundsTest" />
-      <item itemvalue="JUnit.SoundsTest.officeSoundTest" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.SoundsTest.officeSoundTest" />
-        <item itemvalue="JUnit.SoundsTest" />
-        <item itemvalue="JUnit.WindowTest" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -428,31 +391,11 @@
       <workItem from="1551472908493" duration="2066000" />
       <workItem from="1551481490748" duration="1268000" />
       <workItem from="1551732117702" duration="149000" />
+      <workItem from="1551735087814" duration="196000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="WindowTest - 2019.02.28 at 22h 53m 54s.xml">
-      <configuration name="WindowTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WindowTest - 2019.02.28 at 22h 54m 34s.xml">
-      <configuration name="WindowTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="WindowTest - 2019.02.28 at 23h 01m 46s.xml">
-      <configuration name="WindowTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SoundsTest - 2019.03.01 at 13h 17m 54s.xml">
-      <configuration name="SoundsTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SoundsTest_officeSoundTest - 2019.03.01 at 15h 20m 15s.xml">
-      <configuration name="SoundsTest.officeSoundTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Unnamed - 2019.03.04 at 12h 54m 18s.xml">
-      <configuration name="Unnamed" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Unnamed - 2019.03.04 at 12h 54m 32s.xml">
-      <configuration name="Unnamed" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="Unnamed - 2019.03.04 at 12h 57m 43s.xml">
       <configuration name="Unnamed" configurationId="JUnit" />
     </history-entry>
@@ -462,9 +405,30 @@
     <history-entry file="Unnamed - 2019.03.04 at 13h 24m 17s.xml">
       <configuration name="Unnamed" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="Unnamed - 2019.03.04 at 13h 26m 04s.xml">
+      <configuration name="Unnamed" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Unnamed - 2019.03.04 at 13h 26m 21s.xml">
+      <configuration name="Unnamed" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WindowTest - 2019.03.04 at 13h 28m 30s.xml">
+      <configuration name="WindowTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="testAll - 2019.03.04 at 13h 29m 25s.xml">
+      <configuration name="testAll" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="testAll - 2019.03.04 at 13h 30m 38s.xml">
+      <configuration name="testAll" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="testAll - 2019.03.04 at 13h 32m 00s.xml">
+      <configuration name="testAll" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="testAll - 2019.03.04 at 13h 34m 29s.xml">
+      <configuration name="testAll" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5353000" />
+    <option name="totallyTimeSpent" value="5843000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -476,10 +440,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28731343" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14630872" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -488,14 +451,14 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3286334" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32765958" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286334" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3286334" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.3253796" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.3248227" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3286334" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -582,47 +545,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FoxyInitialize.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Foxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/test/InitializeGameTest.java" />
     <entry file="file://$PROJECT_DIR$/test/OfficeTestTest.java" />
     <entry file="file://$PROJECT_DIR$/test/InitializeGameTest1.java" />
-    <entry file="file://$PROJECT_DIR$/src/InitializeGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/FoxyInitializeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/FoxyTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bonnie.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7718">
@@ -645,40 +570,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bonnie.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/InitializeGameTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-231">
-          <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        <state relative-caret-position="57">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/OfficeTest.java">
+    <entry file="file://$PROJECT_DIR$/test/FoxyTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="80" column="60" selection-start-line="80" selection-start-column="60" selection-end-line="80" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="38">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/SoundsTest.java">
+    <entry file="file://$PROJECT_DIR$/test/FoxyInitializeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="41" lean-forward="true" selection-end-line="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="76">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/WindowTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+        <state relative-caret-position="38">
+          <caret line="2" column="18" selection-start-column="7" selection-end-line="2" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/InitializeGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3230">
+          <caret line="170" column="39" selection-start-line="170" selection-start-column="39" selection-end-line="170" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/SoundsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FoxyInitialize.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Foxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/OfficeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
