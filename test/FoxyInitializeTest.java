@@ -1,7 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-
 class FoxyInitializeTest {
     public void testInit(){
 //        InitializeGame it = new InitializeGame();
