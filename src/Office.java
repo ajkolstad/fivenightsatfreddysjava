@@ -92,6 +92,7 @@ public class Office {
 		if (monitorUp == true) {
 			usage = usage + 1;
 		}
+		devicedUsed = usage;
 		return usage;
 	}
 
@@ -113,6 +114,9 @@ public class Office {
 		}
 		if (devicedUsed == 5) {
 			powerRemaining = powerRemaining - 6;
+		}
+		if(powerRemaining < 0){
+			powerRemaining = 0;
 		}
 	}
 }
