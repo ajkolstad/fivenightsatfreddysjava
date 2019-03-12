@@ -17,15 +17,15 @@ class FoxyTest {
     @Test
     public void stageTest(){
         Foxy sFoxy = new Foxy();
-        assertEquals(sFoxy.getStage(), 0);
+        Assert.assertEquals(sFoxy.getStage(), 0);
         sFoxy.tick();
-        assertEquals(sFoxy.getStage(), 1);
+        Assert.assertEquals(sFoxy.getStage(), 1);
         sFoxy.tick();
-        assertEquals(sFoxy.getStage(), 2);
+        Assert.assertEquals(sFoxy.getStage(), 2);
         sFoxy.tick();
-        assertEquals(sFoxy.getStage(), 3);
+        Assert.assertEquals(sFoxy.getStage(), 3);
         sFoxy.tick();
-        assertEquals(sFoxy.getStage(), 3);
+        Assert.assertEquals(sFoxy.getStage(), 3);
     }
 
 }

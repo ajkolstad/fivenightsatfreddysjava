@@ -4,18 +4,19 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class FoxyInitializeTest {
     public void testInit(){
+        InitializeGame it = new InitializeGame();
         it.Foxy();
-        assertEquals(0, it.FoxTimer);
+        Assert.assertEquals(0, it.FoxTimer);
         f.playerdeath = true;
-        assertEquals(0, it.FoxTimer);
+        Assert.assertEquals(0, it.FoxTimer);
         it.FoxTimer = 1;
-        assertEquals(1, it.FoxTimer);
+        Assert.assertEquals(1, it.FoxTimer);
         it.Foxy();
-        assertEquals(2, it.FoxTimer);
+        Assert.assertEquals(2, it.FoxTimer);
         it.Foxy();
-        assertEquals(3, it.FoxTimer);
+        Assert.assertEquals(3, it.FoxTimer);
         it.Foxy();
-        assertEquals(4, it.FoxTimer);
+        Assert.assertEquals(4, it.FoxTimer);
         for (int i = 0; i < 100; i++){
             it.Foxy();
         }
