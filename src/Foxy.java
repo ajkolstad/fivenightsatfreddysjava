@@ -1,3 +1,7 @@
+import javax.sound.sampled.*;
+import java.io.File;
+import java.io.IOException;
+
 public class Foxy {
 
 	private int Difficulty;
@@ -5,6 +9,7 @@ public class Foxy {
 	private boolean seen;
 	private double startTime;
 	public static boolean playerdeath = false;
+	static AudioInputStream audioIn;
 
 	private void foxy(int difficulty) {
 		this.Difficulty = difficulty;
@@ -19,7 +24,15 @@ public class Foxy {
 			} else {
 				if (Office.door1open == false) {
 					stage = 1;
-					Window.knock.play();
+					try {
+						Window.playSound(Window.knock);
+					} catch (LineUnavailableException e) {
+						e.printStackTrace();
+					} catch (IOException e) {
+						e.printStackTrace();
+					} catch (UnsupportedAudioFileException e) {
+						e.printStackTrace();
+					}
 				} else {
 					playerdeath = true;
 				}

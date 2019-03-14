@@ -1,4 +1,5 @@
 import javax.imageio.ImageIO;
+import javax.sound.sampled.*;
 import javax.swing.*;
 import java.applet.Applet;
 import java.applet.AudioClip;
@@ -32,19 +33,20 @@ public class Window extends JFrame { //A ton of variable declarations
 	public static boolean gamemusicplaying = false;
 	public static boolean screamplay = false;
 	private Graphics Graphic;
-	static AudioClip knock;
-	AudioClip run;
-	static AudioClip scream;
-	AudioClip ambiance1;
-	AudioClip ambiance2;
-	AudioClip ambiance3;
-	static AudioClip door;
-	static AudioClip light;
-	AudioClip main1;
-	AudioClip main2;
-	static AudioClip blip;
+	static String blip = "blip.wav";
+	static String knock = "FoxyKnock.wav";
+	static String run = "FoxyRun.wav";
+	static String scream = "XSCREAM.wav";
+	static String ambiance1 = "Ambiance1.wav";
+	static String ambiance2 = "Ambiance2.wav";
+	//static String ambiance3 = "Ambiance3.wav";
+	static String light;
+	static String door = "Door.wav";
+	static String main1 = "MainMenu1.wav";
+	static String main2 = "MainMenu2.wav";
 	BufferedImage stage;
-	BufferedImage currentView;
+	static AudioInputStream audioIn;
+	//BufferedImage currentView;
 	BufferedImage bonnie1, bonnie2, bonnie3, bonnie4, bonnie5, bonnie6,
 			bonnie7, bonnie8, bonnie9, bonnie10, bonnie11, chicka1, chicka2,
 			chicka3, chicka4, chicka5, chicka6, chicka7, chicka8, chicka9,
@@ -99,20 +101,6 @@ public class Window extends JFrame { //A ton of variable declarations
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(false);
-		try {//Imports sound files
-			knock = Applet.newAudioClip(Window.class.getResource("FoxyKnock.wav"));
-			run = Applet.newAudioClip(Window.class.getResource("FoxyRun.wav"));
-			scream = Applet.newAudioClip(Window.class.getResource("XSCREAM.wav"));
-			ambiance1 = Applet.newAudioClip(Window.class.getResource("Ambiance1.wav"));
-			ambiance2 = Applet.newAudioClip(Window.class.getResource("Ambience2.wav"));
-			door = Applet.newAudioClip(Window.class.getResource("Door.wav"));
-			light = Applet.newAudioClip(Window.class.getResource("Ambiance3.wav"));
-			main1 = Applet.newAudioClip(Window.class.getResource("Mainmenu1.wav"));
-			main2 = Applet.newAudioClip(Window.class.getResource("Mainmenu2.wav"));
-			blip = Applet.newAudioClip(Window.class.getResource("blip.wav"));
-		} catch (Exception a) {
-			a.printStackTrace();
-		}
 		try {//Imports all images for the game
 			offline = ImageIO.read(Window.class.getResource("offline.jpg"));
 			loading = ImageIO.read(Window.class.getResource("jump.jpg"));
@@ -407,23 +395,37 @@ public class Window extends JFrame { //A ton of variable declarations
 	public void paint(Graphics g) { //I don't know why this is here as it appears it's not used at all
 		Image = createImage(getWidth(), getHeight());
 		Graphic = Image.getGraphics();
-		paintComponent(Graphic);
+		try {
+			paintComponent(Graphic);
+		} catch (UnsupportedAudioFileException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (LineUnavailableException e) {
+			e.printStackTrace();
+		}
 		g.drawImage(Image, 0, 0, this);
 	}
 
-	public void paintComponent(Graphics g) {//Handles everything on the screen. 
+	public static void playSound(String fileName) throws LineUnavailableException, IOException, UnsupportedAudioFileException {
+		File f = new File(fileName);
+		audioIn = AudioSystem.getAudioInputStream((f.toURI().toURL()));
+		Clip clip = AudioSystem.getClip();
+		clip.open(audioIn);
+		clip.start();
+	}
+
+	public void paintComponent(Graphics g) throws UnsupportedAudioFileException, IOException, LineUnavailableException {//Handles everything on the screen.
 		g.fillRect(0, 0, getWidth(), getHeight());
 		if (ifloading == true) {//Loading image is displayed while game loads
 			g.drawImage(loading, 370, 200, this);
 		} else {
 			if (startGame == false) {//Main menu screen is displayed
 				if(mainmenumusicplaying == false) {//Plays the menu music
-					main1.play();
-					ambiance1.play();
+					playSound(main1);
+					playSound(ambiance1);
 					mainmenumusicplaying = true;
 				}
-				ambiance2.stop();
-				ambiance1.stop();
 				needToMove = false;
 				int random;
 				random = (int) (Math.random() * 20);
@@ -448,12 +450,10 @@ public class Window extends JFrame { //A ton of variable declarations
 					g.drawImage(newspaper, 0, 0, this);
 				}
 			} else {//Main game display
-				main1.stop();
-				ambiance1.stop();
 				mainmenumusicplaying = false;
 				if(gamemusicplaying == false) {
-					ambiance2.play();
-					ambiance1.play();
+					playSound(ambiance1);
+					playSound(ambiance2);
 					gamemusicplaying = true;
 				}
 				if (Office.monitorUp == true) {//Displays camera view
@@ -711,7 +711,7 @@ public class Window extends JFrame { //A ton of variable declarations
 							needToMove = false;
 							if (Fox == 1) {
 								g.drawImage(foxrun1, 0, 0, this);
-								run.play();
+								playSound(run);
 							}
 							if (Fox == 2)
 								g.drawImage(foxrun2, 0, 0, this);
@@ -817,7 +817,7 @@ public class Window extends JFrame { //A ton of variable declarations
 					if (Bonnie.playerdeath == true && Office.monitorUp == false) {//Bonnie's death animation
 						needToMove = false;
 						if (bonnie == 1) {
-							scream.play();
+							playSound(scream);
 							g.drawImage(bonnie1, 0, 0, this);
 						}
 						if (bonnie == 2)
@@ -840,18 +840,15 @@ public class Window extends JFrame { //A ton of variable declarations
 							g.drawImage(bonnie10, 0, 0, this);
 						if (bonnie == 11) {
 							g.drawImage(bonnie11, 0, 0, this);
-							scream.stop();
 						}
 
 						
 						
 					} else if (Chicka.playerdeath == true && Office.monitorUp == false) {//Chicka's death animation
 						needToMove = false;
-						main1.stop();
-						ambiance1.stop();
 						if (chicka == 1) {
 							g.drawImage(chicka1, 0, 0, this);
-							scream.play();
+							playSound(scream);
 						}
 						if (chicka == 2)
 							g.drawImage(chicka2, 0, 0, this);
@@ -883,16 +880,13 @@ public class Window extends JFrame { //A ton of variable declarations
 							g.drawImage(chicka15, 0, 0, this);
 						if (chicka == 16) {
 							g.drawImage(chicka16, 0, 0, this);
-						scream.stop();
 					}
 
 					} else if (Freddy.playerdeath == true && Office.monitorUp == false) {//Freddy's death animation
 						needToMove = false;
-						main1.stop();
-						ambiance1.stop();
 						if (freddie == 1) {
 							g.drawImage(freddy1, 0, 0, this);
-							scream.play();
+							playSound(scream);
 						}
 						if (freddie == 2)
 							g.drawImage(freddy2, 0, 0, this);
@@ -948,16 +942,13 @@ public class Window extends JFrame { //A ton of variable declarations
 							g.drawImage(freddy27, 0, 0, this);
 						if (freddie == 28) {
 							g.drawImage(freddy28, 0, 0, this);
-						scream.stop();
 						}
 
 					} else if (Foxy.playerdeath == true
 							&& Office.door1open == true) {//Foxy's death animation
 						needToMove = false;
-						main1.stop();
-						ambiance1.stop();
 						if (foxdie == 1) {
-							scream.play();
+							playSound(scream);
 							g.drawImage(foxy1, 0, 0, this);
 						}
 						if (foxdie == 2)
@@ -996,7 +987,6 @@ public class Window extends JFrame { //A ton of variable declarations
 							g.drawImage(foxy18, 0, 0, this);
 						if (foxdie == 19) {
 							g.drawImage(foxy19, 0, 0, this);
-							scream.stop();
 						}
 						//A lot is going on here, but this displays certain images if certain characters are right outside, or if the lights are on or not. It also moves the doors
 					} else if (Office.light1on == true
@@ -1251,22 +1241,16 @@ public class Window extends JFrame { //A ton of variable declarations
 
 		} else if (Chicka.playerdeath == true && Office.monitorUp == false) {//Chicka's death animation
 			needToMove = false;
-			main1.stop();
-			ambiance1.stop();
 			return "scream";
 
 		} else if (Freddy.playerdeath == true && Office.monitorUp == false) {//Freddy's death animation
 			needToMove = false;
-			main1.stop();
-			ambiance1.stop();
 			return "scream";
 
 
 		} else if (Foxy.playerdeath == true
 				&& Office.door1open == true) {//Foxy's death animation
 			needToMove = false;
-			main1.stop();
-			ambiance1.stop();
 			return "scream";
 		}
 		return "nothing";

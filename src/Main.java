@@ -4,7 +4,13 @@ import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
 
+import javax.sound.sampled.*;
 import javax.swing.JFrame;
 
 public class Main implements Runnable, MouseListener, MouseMotionListener {
@@ -42,6 +48,7 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 	public static int gameWinTimer = 0;
 	JFrame frame = new JFrame();
 	public int StaticTimer = 0;
+	AudioInputStream audioIn;
 
 	public static void main(String[] args) {
 		Main main = new Main();
@@ -215,7 +222,7 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 						if(Office.door1open == true) {
 							Foxy.playerdeath = true;
 						} else {
-							Window.knock.play();
+							playSound(Window.knock);
 							Foxy.stage = 1;
 							foxyTime = false;
 						}
@@ -915,7 +922,7 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 						newsTimer = 0;
 						Window.startGame = true;
 						Window.startClicked = false;
-						Window.blip.play();
+
 					}
 
 				}
@@ -932,6 +939,14 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 				a.printStackTrace();
 			}
 		}
+	}
+
+	public void playSound(String fileName) throws LineUnavailableException, IOException, UnsupportedAudioFileException {
+		File f = new File(fileName);
+		audioIn = AudioSystem.getAudioInputStream((f.toURI().toURL()));
+		Clip clip = AudioSystem.getClip();
+		clip.open(audioIn);
+		clip.start();
 	}
 
 	public Main() {
@@ -951,99 +966,233 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 				&& e.getY() >= 383 && e.getY() <= 437
 				&& Office.light1on == false) {
 			Office.light1on = true;
-			Window.light.play();
+			try {
+				playSound(Window.light);
+			} catch (LineUnavailableException e1) {
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			} catch (UnsupportedAudioFileException e1) {
+				e1.printStackTrace();
+			}
 		} else if (Window.startGame == true && e.getX() >= 30 && e.getX() <= 68
 				&& e.getY() >= 383 && e.getY() <= 437
 				&& Office.light1on == true) {
 			Office.light1on = false;
-			Window.light.stop();
 		}
 		if (Window.startGame == true && e.getX() >= 1212 && e.getX() <= 1246
 				&& e.getY() >= 383 && e.getY() <= 437
 				&& Office.light2on == false) {
 			Office.light2on = true;
-			Window.light.play();
+			try {
+				playSound(Window.light);
+			} catch (LineUnavailableException e1) {
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			} catch (UnsupportedAudioFileException e1) {
+				e1.printStackTrace();
+			}
 		} else if (Window.startGame == true && e.getX() >= 1212
 				&& e.getX() <= 1246 && e.getY() >= 383 && e.getY() <= 437
 				&& Office.light2on == true) {
 			Office.light2on = false;
-			Window.light.stop();
 		}
 		if (Window.startGame == true && e.getX() >= 30 && e.getX() <= 68
 				&& e.getY() >= 300 && e.getY() <= 357
 				&& Office.door1open == true) {
 			Office.door1open = false;
-			Window.door.play();
+			try {
+				playSound(Window.door);
+			} catch (LineUnavailableException e1) {
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			} catch (UnsupportedAudioFileException e1) {
+				e1.printStackTrace();
+			}
 		} else if (Window.startGame == true && e.getX() >= 30 && e.getX() <= 68
 				&& e.getY() >= 300 && e.getY() <= 357
 				&& Office.door1open == false) {
 			Office.door1open = true;
-			Window.door.play();
+			try {
+				playSound(Window.door);
+			} catch (LineUnavailableException e1) {
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			} catch (UnsupportedAudioFileException e1) {
+				e1.printStackTrace();
+			}
 		}
 		if (Window.startGame == true && e.getX() >= 1212 && e.getX() <= 1246
 				&& e.getY() >= 300 && e.getY() <= 357
 				&& Office.door2open == true) {
 			Office.door2open = false;
-			Window.door.play();
+			try {
+				playSound(Window.door);
+			} catch (LineUnavailableException e1) {
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			} catch (UnsupportedAudioFileException e1) {
+				e1.printStackTrace();
+			}
 		} else if (Window.startGame == true && e.getX() >= 1212
 				&& e.getX() <= 1246 && e.getY() >= 300 && e.getY() <= 357
 				&& Office.door2open == false) {
 			Office.door2open = true;
-			Window.door.play();
+			try {
+				playSound(Window.door);
+			} catch (LineUnavailableException e1) {
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			} catch (UnsupportedAudioFileException e1) {
+				e1.printStackTrace();
+			}
 		}
 		if (Office.monitorUp == true) {
 			if (e.getX() >= 923 && e.getX() <= 973 && e.getY() >= 343
 					&& e.getY() <= 377) {
 				Window.cameraLocation = "Show Stage";
-				Window.blip.play();
+				try {
+					playSound(Window.blip);
+				} catch (LineUnavailableException e1) {
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				} catch (UnsupportedAudioFileException e1) {
+					e1.printStackTrace();
+				}
 			}
 			if (e.getX() >= 904 && e.getX() <= 954 && e.getY() >= 399
 					&& e.getY() <= 433) {
 				Window.cameraLocation = "Dining Area";
-				Window.blip.play();
+				try {
+					playSound(Window.blip);
+				} catch (LineUnavailableException e1) {
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				} catch (UnsupportedAudioFileException e1) {
+					e1.printStackTrace();
+				}
 			}
 			if (e.getX() >= 877 && e.getX() <= 927 && e.getY() >= 481
 					&& e.getY() <= 515) {
 				Window.cameraLocation = "Pirate Cove";
-				Window.blip.play();
+				try {
+					playSound(Window.blip);
+				} catch (LineUnavailableException e1) {
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				} catch (UnsupportedAudioFileException e1) {
+					e1.printStackTrace();
+				}
 			}
 			if (e.getX() >= 926 && e.getX() <= 976 && e.getY() >= 596
 					&& e.getY() <= 630) {
 				Window.cameraLocation = "West Hall A";
-				Window.blip.play();
+				try {
+					playSound(Window.blip);
+				} catch (LineUnavailableException e1) {
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				} catch (UnsupportedAudioFileException e1) {
+					e1.printStackTrace();
+				}
 			}
 			if (e.getX() >= 926 && e.getX() <= 976 && e.getY() >= 631
 					&& e.getY() <= 665) {
 				Window.cameraLocation = "West Hall B";
-				Window.blip.play();
+				try {
+					playSound(Window.blip);
+				} catch (LineUnavailableException e1) {
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				} catch (UnsupportedAudioFileException e1) {
+					e1.printStackTrace();
+				}
 			}
 			if (e.getX() >= 850 && e.getX() <= 900 && e.getY() >= 578
 					&& e.getY() <= 612) {
 				Window.cameraLocation = "Supply Closet";
-				Window.blip.play();
+				try {
+					playSound(Window.blip);
+				} catch (LineUnavailableException e1) {
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				} catch (UnsupportedAudioFileException e1) {
+					e1.printStackTrace();
+				}
 			}
 			if (e.getX() >= 1034 && e.getX() <= 1084 && e.getY() >= 596
 					&& e.getY() <= 630) {
 				Window.cameraLocation = "East Hall A";
-				Window.blip.play();
+				try {
+					playSound(Window.blip);
+				} catch (LineUnavailableException e1) {
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				} catch (UnsupportedAudioFileException e1) {
+					e1.printStackTrace();
+				}
 			}
 			if (e.getX() >= 1034 && e.getX() <= 1084 && e.getY() >= 631
 					&& e.getY() <= 665) {
 				Window.cameraLocation = "East Hall B";
-				Window.blip.play();
+				try {
+					playSound(Window.blip);
+				} catch (LineUnavailableException e1) {
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				} catch (UnsupportedAudioFileException e1) {
+					e1.printStackTrace();
+				}
 			}
 			if (e.getX() >= 796 && e.getX() <= 846 && e.getY() >= 431
 					&& e.getY() <= 465) {
 				Window.cameraLocation = "Backstage";
-				Window.blip.play();
+				try {
+					playSound(Window.blip);
+				} catch (LineUnavailableException e1) {
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				} catch (UnsupportedAudioFileException e1) {
+					e1.printStackTrace();
+				}
 			}
 			if (e.getX() >= 1146 && e.getX() <= 1196 && e.getY() >= 436
 					&& e.getY() <= 470) {
 				Window.cameraLocation = "Restrooms";
-				Window.blip.play();
+				try {
+					playSound(Window.blip);
+				} catch (LineUnavailableException e1) {
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				} catch (UnsupportedAudioFileException e1) {
+					e1.printStackTrace();
+				}
 			}
 		}
-		monitorChange(e);
+		try {
+			monitorChange(e);
+		} catch (UnsupportedAudioFileException e1) {
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		} catch (LineUnavailableException e1) {
+			e1.printStackTrace();
+		}
 	}
 
 	@Override
@@ -1075,10 +1224,10 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 
 	}
 
-	private void monitorChange(MouseEvent e){
+	private void monitorChange(MouseEvent e) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 		if (!Office.monitorUp && e.getX() > 360 && e.getY() > 660 && e.getX() < 860 && Freddy.playerdeath == false && Bonnie.playerdeath == false && Chicka.playerdeath == false && Foxy.playerdeath == false) {
 			Office.monitorUp = true;
-			Window.blip.play();
+			playSound(Window.blip);
 			monitorTransition = true;
 			monitorTimer = 0;
 		}
@@ -1087,7 +1236,7 @@ public class Main implements Runnable, MouseListener, MouseMotionListener {
 				&& monitorTransition == false) {
 			if (e.getX() > 360 && e.getY() > 660 && e.getX() < 860) {
 				Office.monitorUp = false;
-				Window.blip.play();
+				playSound(Window.blip);
 				monitorTransition = true;
 				monitorTimer = 0;
 			}
