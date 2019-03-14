@@ -1,6 +1,10 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import java.io.IOException;
+
 public class SoundsTest {
 
     @Test
@@ -40,5 +44,12 @@ public class SoundsTest {
         Assert.assertEquals("nothing", it.testSounds(29, 383));
         Assert.assertEquals("nothing", it.testSounds(30, 1212));
         Assert.assertEquals("nothing", it.testSounds(1247, 300));
+    }
+
+    @Test
+    public void testPlaySound() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+        Main m = new Main();
+        m.playSound(Window.blip);
+        m.playSound(Window.scream);
     }
 }
